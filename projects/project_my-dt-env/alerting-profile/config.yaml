@@ -15,7 +15,7 @@ configs:
     api: alerting-profile
 - id: alert_pf_sre
   config:
-    name: devops
+    name: sre
     template: alert_pf_sre.json
     skip: false
   type:
