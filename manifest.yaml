@@ -1,5 +1,8 @@
 manifestVersion: 1.0
-projects: []
+projects:
+  - name: project_my-dt-env
+    path: projects/project_my-dt-env
+
 environmentGroups:
   - name: default
     environments:
