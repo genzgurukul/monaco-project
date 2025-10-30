@@ -9,30 +9,51 @@ on:
 jobs:
   monaco:
     runs-on: ubuntu-latest
+
     env:
+      # put this in repo → Settings → Secrets → Actions → DT_API_TOKEN
       DT_API_TOKEN: ${{ secrets.DT_API_TOKEN }}
+      # if you use environment files in manifest, set it here or in monaco yaml
       DT_ENV: my-dt-env
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install Monaco
+      - name: Install Monaco (with checksum)
         run: |
+          # pin the version you want
           MONACO_VERSION=2.26.1
-          curl -L https://github.com/Dynatrace/Dynatrace-Configuration-as-Code/releases/download/v${MONACO_VERSION}/monaco-linux-amd64.zip -o monaco.zip
-          sudo apt-get update -y
-          sudo apt-get install -y unzip
-          unzip monaco.zip -d monaco-bin
-          sudo mv monaco-bin/monaco /usr/local/bin/monaco
+
+          # 1) download the linux binary
+          curl -L "https://github.com/dynatrace/dynatrace-configuration-as-code/releases/download/v${MONACO_VERSION}/monaco-linux-amd64" -o monaco-linux-amd64
+
+          # 2) try to download checksum (some releases publish it)
+          curl -L "https://github.com/dynatrace/dynatrace-configuration-as-code/releases/download/v${MONACO_VERSION}/monaco-linux-amd64.sha256" -o monaco-linux-amd64.sha256 || echo "no checksum published for this version"
+
+          # 3) verify checksum if file exists
+          if [ -f monaco-linux-amd64.sha256 ]; then
+            sha256sum -c monaco-linux-amd64.sha256
+          else
+            echo "⚠️ skipping checksum verification"
+          fi
+
+          # 4) rename, make executable, move to PATH
+          mv monaco-linux-amd64 monaco
+          chmod +x monaco
+          sudo mv monaco /usr/local/bin/monaco
+
+          # 5) show version for logs
           monaco version
 
-      # PR = dry run
+      # PRs → only dry-run
       - name: Dry-run deploy (PRs)
         if: ${{ github.event_name == 'pull_request' }}
-        run: monaco deploy --dry-run manifest.yaml
+        run: |
+          monaco deploy --dry-run manifest.yaml
 
-      # Push to main/master = real deploy
+      # pushes to main/master → real deploy
       - name: Deploy to Dynatrace (push)
         if: ${{ github.event_name == 'push' }}
-        run: monaco deploy manifest.yaml
+        run: |
+          monaco deploy manifest.yaml
