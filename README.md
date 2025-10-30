@@ -52,6 +52,8 @@ monaco download   --manifest manifest.yaml   --environment my-dt-env   --api aut
 To Run the Deployment
 ```yaml
 monaco  deploy --dry-run manifest.yaml
+
+Testing
 monaco deploy manifest.yaml
 ```
 
