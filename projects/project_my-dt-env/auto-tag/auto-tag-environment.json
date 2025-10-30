@@ -1,0 +1,55 @@
+{
+  "description": null,
+  "entitySelectorBasedRules": [],
+  "name": "{{.name}}",
+  "rules": [
+    {
+      "conditions": [
+        {
+          "comparisonInfo": {
+            "caseSensitive": true,
+            "negate": false,
+            "operator": "CONTAINS",
+            "type": "STRING",
+            "value": "adhu"
+          },
+          "key": {
+            "attribute": "HOST_DETECTED_NAME",
+            "type": "STATIC"
+          }
+        }
+      ],
+      "enabled": true,
+      "normalization": "LEAVE_TEXT_AS_IS",
+      "propagationTypes": [
+        "HOST_TO_PROCESS_GROUP_INSTANCE"
+      ],
+      "type": "HOST",
+      "valueFormat": "preprod"
+    },
+    {
+      "conditions": [
+        {
+          "comparisonInfo": {
+            "caseSensitive": true,
+            "negate": false,
+            "operator": "CONTAINS",
+            "type": "STRING",
+            "value": "sumanth-vm.us-east4-b.c.sre-training-462518.internal"
+          },
+          "key": {
+            "attribute": "HOST_DETECTED_NAME",
+            "type": "STATIC"
+          }
+        }
+      ],
+      "enabled": true,
+      "normalization": "LEAVE_TEXT_AS_IS",
+      "propagationTypes": [
+        "HOST_TO_PROCESS_GROUP_INSTANCE"
+      ],
+      "type": "HOST",
+      "valueFormat": "production"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+configs:
+- id: notification-production-support
+  config:
+    name: notification-production-support
+    parameters:
+      alertingprofile__alert_pf_prodops__id:
+        configId: alert_pf_prodops
+        configType: alerting-profile
+        property: id
+        type: reference
+    template: notification-production-support.json
+    skip: false
+  type:
+    api: notification
+- id: notification-devops
+  config:
+    name: notification-devops
+    parameters:
+      alertingprofile__alert_pf_devops__id:
+        configId: alert_pf_devops
+        configType: alerting-profile
+        property: id
+        type: reference
+    template: notification-devops.json
+    skip: false
+  type:
+    api: notification
+

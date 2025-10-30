@@ -1,0 +1,5 @@
+time=2025-10-30T05:29:00.524Z level=INFO msg="Monaco version 2.26.1"
+time=2025-10-30T05:29:00.525Z level=INFO msg="Loading manifest \"manifest.yaml\". Restrictions: groups=[], environments=[\"my-dt-env\"]" manifestPath=manifest.yaml
+time=2025-10-30T05:29:00.525Z level=ERROR msg="manifest file does not exist: manifest.yaml" error.type=loader.ManifestLoaderError error.details="manifest file does not exist: manifest.yaml"
+time=2025-10-30T05:29:00.525Z level=ERROR msg="Error: failed to load manifest 'manifest.yaml'" error.type=*errors.errorString error.details="failed to load manifest 'manifest.yaml'"
+time=2025-10-30T05:29:00.526Z level=ERROR msg="error logs written to .logs/20251030-052900-errors.log" errorLogFilePath=.logs/20251030-052900-errors.log

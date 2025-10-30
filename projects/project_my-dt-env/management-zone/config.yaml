@@ -1,0 +1,15 @@
+configs:
+- id: "mg_sumanth"
+  config:
+    name: sumanth
+    template: mg_sumanth.json
+    skip: false
+  type:
+    api: management-zone
+- id: "mg_adhu"
+  config:
+    name: Adhu
+    template: mg_adhu.json
+    skip: false
+  type:
+    api: management-zone

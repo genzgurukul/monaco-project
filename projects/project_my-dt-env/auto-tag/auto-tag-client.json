@@ -1,0 +1,99 @@
+{
+  "description": null,
+  "entitySelectorBasedRules": [],
+  "name": "{{.name}}",
+  "rules": [
+    {
+      "conditions": [
+        {
+          "comparisonInfo": {
+            "caseSensitive": true,
+            "negate": false,
+            "operator": "CONTAINS",
+            "type": "STRING",
+            "value": "levi"
+          },
+          "key": {
+            "attribute": "HTTP_MONITOR_NAME",
+            "type": "STATIC"
+          }
+        }
+      ],
+      "enabled": true,
+      "normalization": "LEAVE_TEXT_AS_IS",
+      "propagationTypes": [],
+      "type": "HTTP_CHECK",
+      "valueFormat": "Adhu"
+    },
+    {
+      "conditions": [
+        {
+          "comparisonInfo": {
+            "caseSensitive": true,
+            "negate": false,
+            "operator": "CONTAINS",
+            "type": "STRING",
+            "value": "genz"
+          },
+          "key": {
+            "attribute": "HTTP_MONITOR_NAME",
+            "type": "STATIC"
+          }
+        }
+      ],
+      "enabled": true,
+      "normalization": "LEAVE_TEXT_AS_IS",
+      "propagationTypes": [],
+      "type": "HTTP_CHECK",
+      "valueFormat": "Sumanth"
+    },
+    {
+      "conditions": [
+        {
+          "comparisonInfo": {
+            "caseSensitive": true,
+            "negate": false,
+            "operator": "CONTAINS",
+            "type": "STRING",
+            "value": "adhu"
+          },
+          "key": {
+            "attribute": "HOST_DETECTED_NAME",
+            "type": "STATIC"
+          }
+        }
+      ],
+      "enabled": true,
+      "normalization": "LEAVE_TEXT_AS_IS",
+      "propagationTypes": [
+        "HOST_TO_PROCESS_GROUP_INSTANCE"
+      ],
+      "type": "HOST",
+      "valueFormat": "Adhu"
+    },
+    {
+      "conditions": [
+        {
+          "comparisonInfo": {
+            "caseSensitive": true,
+            "negate": false,
+            "operator": "CONTAINS",
+            "type": "STRING",
+            "value": "sumanth-vm"
+          },
+          "key": {
+            "attribute": "HOST_DETECTED_NAME",
+            "type": "STATIC"
+          }
+        }
+      ],
+      "enabled": true,
+      "normalization": "LEAVE_TEXT_AS_IS",
+      "propagationTypes": [
+        "HOST_TO_PROCESS_GROUP_INSTANCE"
+      ],
+      "type": "HOST",
+      "valueFormat": "Sumanth"
+    }
+  ]
+}

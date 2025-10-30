@@ -1,0 +1,74 @@
+{
+  "anomalyDetection": {
+    "loadingTimeThresholds": {
+      "enabled": false,
+      "thresholds": []
+    },
+    "outageHandling": {
+      "globalOutage": true,
+      "globalOutagePolicy": {
+        "consecutiveRuns": 1
+      },
+      "localOutage": false,
+      "localOutagePolicy": {
+        "affectedLocations": null,
+        "consecutiveRuns": null
+      }
+    }
+  },
+  "automaticallyAssignedApps": [],
+  "createdFrom": "API",
+  "enabled": true,
+  "frequencyMin": 10,
+  "locations": [
+    "{{ .extractedIDs.id_GEOLOCATION_F1DDD2B371612F65 }}"
+  ],
+  "managementZones": [
+    {
+      "id": "{{.managementzone__mg_adhu__id}}",
+      "name": "Adhu"
+    }
+  ],
+  "manuallyAssignedApps": [],
+  "name": "{{.name}}",
+  "requests": [
+    {
+      "entityId": "{{ .extractedIDs.id_HTTP_CHECK_STEP_EBBE38A6D8FFA0AA }}",
+      "name": "levi.com",
+      "sequenceNumber": 1
+    }
+  ],
+  "script": {
+    "requests": [
+      {
+        "configuration": {
+          "acceptAnyCertificate": false,
+          "followRedirects": true,
+          "shouldNotPersistSensitiveData": false
+        },
+        "description": "levi.com",
+        "method": "GET",
+        "url": "http://www.levi.com/",
+        "validation": {
+          "rules": [
+            {
+              "passIfFound": false,
+              "type": "httpStatusesList",
+              "value": "\u003e=400"
+            }
+          ]
+        }
+      }
+    ],
+    "version": "1.0"
+  },
+  "tags": [
+    {
+      "context": "CONTEXTLESS",
+      "key": "Client",
+      "source": "RULE_BASED",
+      "value": "Adhu"
+    }
+  ],
+  "type": "HTTP"
+}

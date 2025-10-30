@@ -1,0 +1,8 @@
+configs:
+- id: 4db6704e-e36d-35e5-a342-12701de64eb5
+  config:
+    name: Less Disk Availability
+    template: 4db6704e-e36d-35e5-a342-12701de64eb5.json
+    skip: false
+  type:
+    api: anomaly-detection-metrics

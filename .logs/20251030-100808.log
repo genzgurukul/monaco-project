@@ -1,0 +1,3 @@
+time=2025-10-30T10:08:08.447Z level=INFO msg="Monaco version 2.26.1"
+time=2025-10-30T10:08:08.448Z level=ERROR msg="Error: if any flags in the group [settings-schema only-settings] are set none of the others can be; [only-settings settings-schema] were all set" error.type=*errors.errorString error.details="if any flags in the group [settings-schema only-settings] are set none of the others can be; [only-settings settings-schema] were all set"
+time=2025-10-30T10:08:08.448Z level=ERROR msg="error logs written to .logs/20251030-100808-errors.log" errorLogFilePath=.logs/20251030-100808-errors.log

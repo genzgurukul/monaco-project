@@ -1,0 +1,74 @@
+{
+  "anomalyDetection": {
+    "loadingTimeThresholds": {
+      "enabled": false,
+      "thresholds": []
+    },
+    "outageHandling": {
+      "globalOutage": true,
+      "globalOutagePolicy": {
+        "consecutiveRuns": 1
+      },
+      "localOutage": false,
+      "localOutagePolicy": {
+        "affectedLocations": null,
+        "consecutiveRuns": null
+      }
+    }
+  },
+  "automaticallyAssignedApps": [],
+  "createdFrom": "API",
+  "enabled": true,
+  "frequencyMin": 5,
+  "locations": [
+    "{{ .extractedIDs.id_GEOLOCATION_E0172065991D29C8 }}"
+  ],
+  "managementZones": [
+    {
+      "id": "{{.managementzone__mg_sumanth__id}}",
+      "name": "sumanth"
+    }
+  ],
+  "manuallyAssignedApps": [],
+  "name": "{{.name}}",
+  "requests": [
+    {
+      "entityId": "{{ .extractedIDs.id_HTTP_CHECK_STEP_6DD3DCF10C26B718 }}",
+      "name": "genzgurukul.com",
+      "sequenceNumber": 1
+    }
+  ],
+  "script": {
+    "requests": [
+      {
+        "configuration": {
+          "acceptAnyCertificate": false,
+          "followRedirects": true,
+          "shouldNotPersistSensitiveData": false
+        },
+        "description": "genzgurukul.com",
+        "method": "GET",
+        "url": "https://genzgurukul.com/",
+        "validation": {
+          "rules": [
+            {
+              "passIfFound": false,
+              "type": "httpStatusesList",
+              "value": "\u003e=400"
+            }
+          ]
+        }
+      }
+    ],
+    "version": "1.0"
+  },
+  "tags": [
+    {
+      "context": "CONTEXTLESS",
+      "key": "Client",
+      "source": "RULE_BASED",
+      "value": "Sumanth"
+    }
+  ],
+  "type": "HTTP"
+}

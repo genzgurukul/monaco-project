@@ -1,0 +1,37 @@
+configs:
+- id: genzgurukul
+  config:
+    name: genzgurukul.com
+    parameters:
+      extractedIDs:
+        type: value
+        value:
+          id_GEOLOCATION_E0172065991D29C8: GEOLOCATION-E0172065991D29C8
+          id_HTTP_CHECK_STEP_6DD3DCF10C26B718: HTTP_CHECK_STEP-6DD3DCF10C26B718
+      managementzone__mg_sumanth__id:
+        configId: "mg_sumanth"
+        configType: management-zone
+        property: id
+        type: reference
+    template: genzgurukul.json
+    skip: false
+  type:
+    api: synthetic-monitor
+- id: levi
+  config:
+    name: www.levi.com
+    parameters:
+      extractedIDs:
+        type: value
+        value:
+          id_GEOLOCATION_F1DDD2B371612F65: GEOLOCATION-F1DDD2B371612F65
+          id_HTTP_CHECK_STEP_EBBE38A6D8FFA0AA: HTTP_CHECK_STEP-EBBE38A6D8FFA0AA
+      managementzone__mg_adhu__id:
+        configId: "mg_adhu"
+        configType: management-zone
+        property: id
+        type: reference
+    template: levi.json
+    skip: false
+  type:
+    api: synthetic-monitor

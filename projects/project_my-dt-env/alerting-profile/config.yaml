@@ -1,0 +1,16 @@
+configs:
+- id: alert_pf_prodops
+  config:
+    name: production_ops
+    template: alert_pf_prodops.json
+    skip: false
+  type:
+    api: alerting-profile
+- id: alert_pf_devops
+  config:
+    name: devops
+    template: alert_pf_devops.json
+    skip: false
+  type:
+    api: alerting-profile
+

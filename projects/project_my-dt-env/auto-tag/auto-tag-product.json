@@ -1,0 +1,55 @@
+{
+  "description": "Auto-tag based on names for product domain",
+  "entitySelectorBasedRules": [],
+  "name": "{{.name}}",
+  "rules": [
+    {
+      "conditions": [
+        {
+          "comparisonInfo": {
+            "caseSensitive": true,
+            "negate": false,
+            "operator": "CONTAINS",
+            "type": "STRING",
+            "value": "sumanth-vm"
+          },
+          "key": {
+            "attribute": "HOST_DETECTED_NAME",
+            "type": "STATIC"
+          }
+        }
+      ],
+      "enabled": true,
+      "normalization": "LEAVE_TEXT_AS_IS",
+      "propagationTypes": [
+        "HOST_TO_PROCESS_GROUP_INSTANCE"
+      ],
+      "type": "HOST",
+      "valueFormat": "payment"
+    },
+    {
+      "conditions": [
+        {
+          "comparisonInfo": {
+            "caseSensitive": true,
+            "negate": false,
+            "operator": "CONTAINS",
+            "type": "STRING",
+            "value": "adhu"
+          },
+          "key": {
+            "attribute": "HOST_DETECTED_NAME",
+            "type": "STATIC"
+          }
+        }
+      ],
+      "enabled": true,
+      "normalization": "LEAVE_TEXT_AS_IS",
+      "propagationTypes": [
+        "HOST_TO_PROCESS_GROUP_INSTANCE"
+      ],
+      "type": "HOST",
+      "valueFormat": "cart"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+time=2025-10-30T12:41:55.948Z level=ERROR msg="Failed to load projects - 1 errors occurred:"
+time=2025-10-30T12:41:55.948Z level=ERROR msg="missing type definition" error.type=*errors.errorString error.details="missing type definition"
+time=2025-10-30T12:41:55.948Z level=ERROR msg="Error: failed to load projects - 1 errors occurred" error.type=*errors.errorString error.details="failed to load projects - 1 errors occurred"
+time=2025-10-30T12:41:55.948Z level=ERROR msg="error logs written to .logs/20251030-124155-errors.log" errorLogFilePath=.logs/20251030-124155-errors.log

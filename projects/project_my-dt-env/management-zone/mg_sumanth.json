@@ -1,0 +1,53 @@
+{
+  "description": null,
+  "dimensionalRules": [],
+  "entitySelectorBasedRules": [],
+  "name": "{{.name}}",
+  "rules": [
+    {
+      "conditions": [
+        {
+          "comparisonInfo": {
+            "caseSensitive": true,
+            "negate": false,
+            "operator": "CONTAINS",
+            "type": "STRING",
+            "value": "genz"
+          },
+          "key": {
+            "attribute": "HTTP_MONITOR_NAME",
+            "type": "STATIC"
+          }
+        }
+      ],
+      "enabled": true,
+      "propagationTypes": [],
+      "type": "HTTP_MONITOR"
+    },
+    {
+      "conditions": [
+        {
+          "comparisonInfo": {
+            "negate": false,
+            "operator": "EQUALS",
+            "type": "TAG",
+            "value": {
+              "context": "CONTEXTLESS",
+              "key": "Client",
+              "value": "Sumanth"
+            }
+          },
+          "key": {
+            "attribute": "HOST_TAGS",
+            "type": "STATIC"
+          }
+        }
+      ],
+      "enabled": true,
+      "propagationTypes": [
+        "HOST_TO_PROCESS_GROUP_INSTANCE"
+      ],
+      "type": "HOST"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "active": true,
+  "alertingProfile": "{{.alertingprofile__alert_pf_devops__id}}",
+  "bccReceivers": [],
+  "body": "{ProblemDetailsHTML}",
+  "ccReceivers": [],
+  "name": "{{.name}}",
+  "receivers": [
+    "terraform17@gmail.com"
+  ],
+  "subject": "{State} Problem {ProblemID}: {ImpactedEntity}",
+  "type": "EMAIL"
+}

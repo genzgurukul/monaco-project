@@ -1,0 +1,28 @@
+{
+  "aggregationType": "AVG",
+  "alertCondition": "ABOVE",
+  "dealertingSamples": 5,
+  "description": "The {metricname} value was {alert_condition} normal behavior.",
+  "disabledReason": "NONE",
+  "enabled": true,
+  "eventType": "CUSTOM_ALERT",
+  "metricId": "builtin:host.disk.free",
+  "monitoringStrategy": {
+    "alertCondition": "ABOVE",
+    "alertingOnMissingData": false,
+    "dealertingSamples": 5,
+    "samples": 5,
+    "threshold": 95.536,
+    "type": "STATIC_THRESHOLD",
+    "unit": "UNSPECIFIED",
+    "violatingSamples": 3
+  },
+  "name": "{{.name}}",
+  "primaryDimensionKey": "dt.entity.host",
+  "samples": 5,
+  "severity": "CUSTOM_ALERT",
+  "threshold": 95.536,
+  "unit": "UNSPECIFIED",
+  "violatingSamples": 3,
+  "warningReason": "NONE"
+}

@@ -1,0 +1,13 @@
+manifestVersion: "1.0"
+projects:
+- name: project_my-dt-env
+environmentGroups:
+- name: default
+  environments:
+  - name: project_my-dt-env
+    url:
+      value: https://odg17023.live.dynatrace.com
+    auth:
+      token:
+        type: environment
+        name: DT_API_TOKEN

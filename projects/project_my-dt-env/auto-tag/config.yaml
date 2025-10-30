@@ -1,0 +1,29 @@
+configs:
+- id: auto-tag-client
+  config:
+    name: Client
+    template: auto-tag-client.json
+    skip: false
+  type:
+    api: auto-tag
+- id: auto-tag-product
+  config:
+    name: product
+    template: auto-tag-product.json
+    skip: false
+  type:
+    api: auto-tag
+- id: auto-tag-team-name
+  config:
+    name: team-name
+    template: auto-tag-team-name.json
+    skip: false
+  type:
+    api: auto-tag
+- id: auto-tag-environment
+  config:
+    name: environment
+    template: auto-tag-environment.json
+    skip: false
+  type:
+    api: auto-tag
