@@ -3,23 +3,14 @@ name: Dynatrace Monaco Deploy
 on:
   push:
     branches: [ main, master ]
-    paths:
-      - 'manifest.yaml'
-      - 'projects/**'
   pull_request:
     branches: [ main, master ]
-    paths:
-      - 'manifest.yaml'
-      - 'projects/**'
 
 jobs:
   monaco:
     runs-on: ubuntu-latest
-
     env:
-      # Dynatrace token from GitHub Secrets 👇
       DT_API_TOKEN: ${{ secrets.DT_API_TOKEN }}
-      # adjust if your tenant changes
       DT_ENV: my-dt-env
 
     steps:
@@ -36,16 +27,12 @@ jobs:
           sudo mv monaco-bin/monaco /usr/local/bin/monaco
           monaco version
 
-      # 1) On PRs → do only dry-run
+      # PR = dry run
       - name: Dry-run deploy (PRs)
         if: ${{ github.event_name == 'pull_request' }}
-        working-directory: .
-        run: |
-          monaco deploy --dry-run manifest.yaml
+        run: monaco deploy --dry-run manifest.yaml
 
-      # 2) On push to main → do actual deploy
-      - name: Deploy to Dynatrace (main)
+      # Push to main/master = real deploy
+      - name: Deploy to Dynatrace (push)
         if: ${{ github.event_name == 'push' }}
-        working-directory: .
-        run: |
-          monaco deploy manifest.yaml
+        run: monaco deploy manifest.yaml
