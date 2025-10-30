@@ -27,3 +27,10 @@ configs:
     skip: false
   type:
     api: auto-tag
+- id: auto-businessunit
+  config:
+    name: environment
+    template: auto-businessunit.json
+    skip: false
+  type:
+    api: auto-tag
